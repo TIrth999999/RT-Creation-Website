@@ -1,0 +1,237 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RT Creations</title>
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class="container" id="container">
+        <header>
+            <div class="logo" style="width:340px;">
+                <i class="fas fa-gamepad"></i>
+                <p style="margin-right:40px">The R & T Creation</p>
+            </div>
+            <ul class="navbar">
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#section-1">GAMES</a></li>
+                <li><a href="#section-3">RATINGS</a></li>
+                <li><a href="{% url 'review' %}">REVIEW</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT US</a></li>
+            </ul>
+            <form method="POST">
+                {% csrf_token %}
+                <button onclick="downloadFile()" type="submit" id="btn" disabled><i class="fas fa-play" ></i>PLAY NOW</button>
+            </form>
+        </header>
+
+        <div class="slider-container">
+            <div class="slider">
+
+
+                <div class="content-wrapper">
+                    <div class="content-desc ">
+                        <h1>Ninja - The Slayer</h1>
+                        <p>Get Ready to <span>Fight !!</span> in this Ninja World with tons of enemy.</p>
+                        <p>Survive and Bring back the Village Stone from enemy.</p>
+
+                        {% comment %} <form method="POST">
+                            {% csrf_token %}
+                            
+                            <button onclick="downloadFile()" id="btn2" style="width:230px" ><pre>Download Now  <i class="fas fa-download"></i></pre></button>
+                        </form> {% endcomment %}
+                        <button id="btn2" style="width:300px" ><pre>Coming Soon 2025  <i class="fas fa-clock"></i></pre></button>
+                    </div>
+                    <div class="rakuto" id="rakuto1" style="margin-top:7%">
+                    </div>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="content-desc">
+                        <h1>Ninja Girl Update</h1>
+                        <p>Compete with <span>Tons of enemy</span> in this Hell World.</p>
+                        <p>Get Ready to fight with your skills.</p>
+
+                        {% comment %} <form method="POST">
+                            {% csrf_token %}
+                            
+                            <button onclick="downloadFile()" id="btn2" style="width:230px" ><pre>Download Now  <i class="fas fa-download"></i></pre></button>
+                        </form> {% endcomment %}
+                        <button id="btn2" style="width:240px" ><pre>Stay Tuned  <i class="fas fa-user-ninja" style="font-size:25px;"></i></pre></button>
+                    </div>
+                    <div class="rakuto" id="rakuto2" style="margin-top:7%">
+                    </div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="content-desc">
+                        <h1>Download For Free !!</h1>
+                        <p>Enjoy the<span> Ninja - The Slayer </span>for absolute free.</p>
+                        <p>One click download and Enjoy the Journey of the Ninja.</p>
+
+                        {% comment %} <form method="POST">
+                            {% csrf_token %}
+                            
+                            <button onclick="downloadFile()" id="btn2" style="width:230px" ><pre>Download Now  <i class="fas fa-download"></i></pre></button>
+                        </form> {% endcomment %}
+                        <button id="btn2" style="width:300px" ><pre>Downlaod For Free <i class="fas fa-heart"></i></pre></button>
+                    </div>
+                    <div class="rakuto" id="rakuto3" style="margin-top:7%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo-section" style="text-align:center">
+        <i class="fas fa-gamepad"></i>
+        <h1>The R & T Creation</h1>
+    </div>
+    
+    <section class="section-1" id="section-1">
+        <div class="section-1-wrapper">  
+            <br>
+            <h1 style="color:white;font-weight:bold; letter-spacing:3px">ACTION GAMES</h1>
+            <br>
+
+            <style>
+                .section-1-img .img:hover{
+                    transition: 0.2s;
+                }
+            </style>
+            <div class="section-1-img">
+                <a href="{% url 'home' %}"><div class="img img"></div></a>
+                <a href="{% url 'home' %}"><div class="img img-6"></div></a>
+                <a href="{% url 'home' %}"><div class="img img-3"></div></a>
+                <a href="{% url 'home' %}"><div class="img img-4"></div></a>
+                <a href="{% url 'home' %}"><div class="img img-7"></div></a>
+            </div>
+
+            <div class="section-1-img" style="margin-top:30px">
+
+                <a href="{% url 'home' %}"><div class="img img-2"></div></a>
+                <a href="{% url 'home' %}"><div class="img img-5"></div></a>
+            </div>
+
+
+        </div>
+        
+        
+    </section>
+    <section class="section-2" style="height:130px;display:flex;width:80%;margin-left:auto;margin-right:auto;margin-top:2.5%;justify-content:center;border:1px solid #FEC53A">
+        <h1 style="width:50%;text-align:center;position:relative;z-index:1;margin-left:16%;">Ninja - The Slayer (2D)</h1>
+        <div style="display:flex;flex-direction:row;align-items:center;text-align:center;width:50%;">
+        <div style="text-align:center;margin-left:0%">
+            <h2 style="color:white;font-size:2rem;animation: color-change 2s infinite;">
+                {{counter.count}} +
+            </h2>
+            <style>
+                @keyframes color-change {
+                    0% {
+                        color: red;
+                    }
+                    10% {
+                        color: orange;
+                    }
+                    20% {
+                        color: yellow;
+                    }
+                    30% {
+                        color: green;
+                    }
+                    40% {
+                        color: blue;
+                    }
+                    50% {
+                        color: indigo;
+                    }
+                    60% {
+                        color: violet;
+                    }
+                    70% {
+                        color: red;
+                    }
+                    80% {
+                        color: orange;
+                    }
+                    90% {
+                        color: yellow;
+                    }
+                    100% {
+                        color: green;
+                    }
+                }
+            </style>
+        </div>
+        <h1 style="text-align:center;color:white"><pre> Downloads <i class="fas fa-download"></i></pre></h1>
+        </div>
+    </section>
+    <div class="section-3" id="section-3">
+        <h1 style="color:white;font-weight:bold; letter-spacing:3px;margin-top:40px;padding-top:60px">What People say About us</h1>
+        <div class="section-3-wrapper" style="margin-top:-35px">
+            <div class="feedback"></div>
+            <div class="feedback-desc" style="border:1px solid #FEC53A">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus error, 
+                tempora laborum, voluptas magnam animi quo repudiandae asperiores 
+                totam dolore commodi perspiciatis sapiente accusamus alias non vitae incidunt nisi!</p>
+                <br>
+                <i class="far fa-grin-squint-tears"></i><br>
+                <h4>OSCAR</h4>
+            </div>
+            <!-- =========================== -->
+            <div class="feedback f-img-2"></div>
+            <div class="feedback-desc" style="border:1px solid #FEC53A">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus error, 
+                tempora laborum, voluptas magnam animi quo repudiandae asperiores 
+                totam dolore commodi perspiciatis sapiente accusamus alias non vitae incidunt nisi!</p>
+                <br>
+                <i class="far fa-grin-beam-sweat"></i><br>
+                <h4>MARIO</h4>
+            </div>
+        </div>
+    </div>
+
+    <footer style="height:300px">
+        <div class="footer-body">
+            <div class="logo footer-logo" style="width:340px">
+                <i class="fas fa-gamepad"></i>
+                <h1>The R & T Creation</h1>
+            </div>
+            <ul>
+                <h3>Short Links</h3>
+                <br>
+                <li><a href="{% url 'home' %}">Ninja - The Warrior</a></li>
+                <li><a href="{% url 'home' %}">Coming Soon</a></li>
+                <li><a href="{% url 'home' %}">Coming Soon</a></li>
+            </ul>
+            <ul>
+                <h3>Get In Touch</h3>
+                <br>
+                <li><a href="#"><i class="fab fa-instagram"></i>Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i>Linkedin</a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i>Youtube</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>Copyright &copy; All Right Reserved | Designed <span>Tirth Gajera</span> 2025</p>
+    </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function downloadFile() {
+        let fileUrl = "{% static 'images/1.png' %}";
+        let link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = "1.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

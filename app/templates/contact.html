@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RT Creations - Contact Us</title>
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body style="width:100%;height:130%">
+    <div class="container" id="container" style="height: 100%;">
+        <header>
+            <div class="logo" style="width:340px;">
+                <i class="fas fa-gamepad"></i>
+                <p style="margin-right:40px">The R & T Creation</p>
+            </div>
+            <ul class="navbar" style="margin-right:30px">
+                <li><a href="{% url 'home' %}" >HOME</a></li>
+                <li><a href="{% url 'review' %}">REVIEW</a></li>
+                <li><a href="{% url 'contact' %}"  class="active">CONTACT US</a></li>
+            </ul>
+        </header>
+
+        <div class="review-section" style="height:100vh;padding:20px;color:black;padding-left:70px; border:2px solid #FEC53A;width:70%;border-radius:10px;background-color:black;margin-top:40px;border-right:none;margin-left:40px;box-shadow: 20 0 0px black;margin-left:auto;margin-right:auto;">
+            <h1 style="font-weight:bold; letter-spacing:3px;margin-top:40px; background:#FEC53A;padding:20px;border-radius:10px;width:105%;clip-path: polygon(0 0, 90% 0, 80% 100%, 0% 100%);">Get In Tocuh With Us</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div style="margin-top:40px;font-size:24px;display:flex;align-items:center;">
+                    <lable for="name" style="color:#FEC53A;">Name :</lable>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" style="width:80%;height:60px;margin-left:30px;border-radius:10px;padding:10px;font-size:24px;border:1px solid #FEC53A;outline:none;transition:0.3s;font-family: 'Poppins';" onfocus="this.style.border='4px solid #FEC53A';" onblur="this.style.border='0px solid #FEC53A';">
+                    <br>
+                </div>
+                <div style="margin-top:40px;font-size:24px;display:flex;align-items:center;">
+                    <lable for="name" style="color:#FEC53A;">E-Mail : </lable>
+                    <input type="email" name="email" id="email" placeholder="Enter Your E-Mail" style="width:80%;height:60px;margin-left:30px;border-radius:10px;padding:10px;font-size:24px;border:1px solid #FEC53A;outline:none;transition:0.3s;font-family: 'Poppins';" onfocus="this.style.border='4px solid #FEC53A';" onblur="this.style.border='0px solid #FEC53A';">
+                    <br>
+                </div>
+                <div style="margin-top:40px;font-size:24px;display:flex;align-items:center;">
+                    <lable for="name" style="color:#FEC53A;">Contact Number :</lable>
+                    <input type="number" name="number" id="number" placeholder="Enter Your Contact Number" style="width:60%;height:60px;margin-left:30px;border-radius:10px;padding:10px;font-size:24px;border:1px solid #FEC53A;outline:none;transition:0.3s;font-family: 'Poppins';" onfocus="this.style.border='4px solid #FEC53A';" onblur="this.style.border='0px solid #FEC53A';" maxlength="10" pattern="[0-9]{10}">
+                    <br>
+                </div>
+                <div style="margin-top:40px;font-size:24px;display:flex;align-items:center;">
+                    <lable for="name" style="color:#FEC53A;">Any Message ? :</lable>
+                    <textarea type="text" name="desc" id="desc" placeholder="Enter Your Message" style=";width:50%;max-width:70%;height:120px;max-height:120px;margin-left:30px;border-radius:10px;padding:10px;font-size:24px;font-family: 'Poppins';"></textarea>
+                    <br>
+                </div>
+                <button type="submit" style="padding:20px 40px;margin-top:40px;border-radius:10px;background:#FEC53A;font-size:28px;color:black;margin-left:auto;margin-right:auto;display:block;">Contact Us</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
